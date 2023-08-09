@@ -30,9 +30,8 @@ function onPromiseCreate(event) {
   let amount = Number(refs.amount.value);
 
   for (let i = 1; i <= amount; i += 1) {
-    let promiseDelay = valueDelay + step * i;
 
-    createPromise(i, promiseDelay)
+    createPromise(i, valueDelay)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
           `✅ Fulfilled promise ${position} in ${delay}ms`
@@ -43,5 +42,8 @@ function onPromiseCreate(event) {
           `❌ Rejected promise ${position} in ${delay}ms`
         );
       });
+    valueDelay += step;
   }
 }
+
+
