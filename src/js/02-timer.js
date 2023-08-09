@@ -64,3 +64,10 @@ btnStart.addEventListener('click', () => {
     }
   }, 1000);
 });
+
+const timerStyle = document.querySelector(".timer");
+
+timerStyle.style.display = "flex";
+timerStyle.style.gap = "50px";
+timerStyle.style.maxWidth = "500px"
+timerStyle.style.border = "1px solid grey";
